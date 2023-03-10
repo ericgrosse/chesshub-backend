@@ -1,11 +1,20 @@
-import { Chess } from 'chess.js';
+//import { Chess } from 'chess.js';
 import express from 'express';
 
 const app = express();
 const port = 3000;
 
-// Create a new game
+/* // Create a new game
 const game = new Chess();
+
+// Make some moves to put the game into a state with a piece in check
+game.move('e4');
+game.move('e5');
+game.move('Qh5');
+game.move('Nc6');
+
+console.log('Current game after 4 moves:');
+console.log(game);
 
 // Evaluate the current state of the game
 function evaluateState() {
@@ -13,7 +22,7 @@ function evaluateState() {
   
   const opponentMoves = moves.filter(move => {
     game.move(move);
-    const isOpponentInCheck = game.inCheck();
+    const isOpponentInCheck = false; //game.inCheck();
     game.undo();
     return isOpponentInCheck;
   }).length;
@@ -90,12 +99,26 @@ function getBestMove() {
 
 // Handle incoming requests
 app.get('/', (req, res) => {
+  console.log('https://localhost:3000/');
   // Get the bot's best move and update the game state
   const bestMove = getBestMove();
+  console.log('Best move:');
+  console.log(bestMove);
   game.move(bestMove);
+
+  console.log('bestMove.from:');
+  console.log(bestMove.from);
+  console.log('bestMove.to:');
+  console.log(bestMove.to);
 
   // Send the bot's move to the client
   res.send({from: bestMove.from, to: bestMove.to});
+  console.log('endpoint calculations complete!');
+  res.end();
+}); */
+
+app.get('/test', (req, res) => {
+  res.send('Hello, world!');
 });
 
 // Start the server
