@@ -1,0 +1,31 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore logs and other generated files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore dotenv files
+.env
+
+# Ignore macOS metadata files
+.DS_Store
+
+# Ignore editor files
+.idea/
+.vscode/
+
+# Ignore OS-specific files
+*.swp
+Thumbs.db
+ehthumbs.db
+Icon?
+ehthumbs_vista.db
+Desktop.ini
+
+# Ignore build files
+build/
+dist/
